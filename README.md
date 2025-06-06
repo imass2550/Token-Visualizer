@@ -1,4 +1,4 @@
-# 🔍 Token Visualizer
+#  Token Visualizer
 
 <div align="center">
 
@@ -17,7 +17,7 @@
 
 ---
 
-## 🎯 Why Token Visualizer?
+##  Why Token Visualizer?
 
 Working with Large Language Models means **tokens = money**. Every prompt you send costs based on token count, but most developers are flying blind:
 
@@ -28,7 +28,7 @@ Working with Large Language Models means **tokens = money**. Every prompt you se
 
 **Token Visualizer solves all of this.**
 
-### 💰 Real Impact
+###  Real Impact
 ```
 Original prompt: 847 tokens → $0.0254 per request
 Optimized prompt: 623 tokens → $0.0187 per request
@@ -37,15 +37,15 @@ Savings: 26% cost reduction → $67/month saved at 10K requests
 
 ---
 
-## ✨ Features
+##  Features
 
-### 🔍 **Deep Token Analysis**
+###  **Deep Token Analysis**
 - **Multi-tokenizer support**: GPT-4, GPT-3.5, Claude, LLaMA, and more
 - **Precise counting**: Exact token counts using `tiktoken` and `transformers`
 - **Line-by-line breakdown**: See exactly where your tokens are going
 - **Efficiency metrics**: Characters-per-token ratios to identify bloat
 
-### 🎨 **Visual Intelligence**
+###  **Visual Intelligence**
 - **Color-coded output**: Instantly spot expensive sections
   - 🔴 **Red**: Expensive lines (>50 tokens) - immediate attention needed
   - 🟡 **Yellow**: Medium lines (25-50 tokens) - optimization opportunities  
@@ -53,14 +53,14 @@ Savings: 26% cost reduction → $67/month saved at 10K requests
 - **Token grid view**: See exactly how text gets tokenized
 - **Progress indicators**: Clear visual feedback during analysis
 
-### 🧠 **AI-Powered Compression Suggestions**
+###  **AI-Powered Compression Suggestions**
 - **Pattern detection**: Finds verbose phrases with smart replacements
 - **Repetition analysis**: Identifies overused words and phrases
 - **Whitespace optimization**: Removes unnecessary spacing
 - **Efficiency scoring**: Quantified recommendations for improvement
 - **Cost impact**: Shows potential savings in dollars and tokens
 
-### 🛠 **Developer Experience**
+###  **Developer Experience**
 - **Multiple input modes**: Interactive, file-based, or programmatic
 - **Cross-platform**: Works on Windows, macOS, and Linux
 - **Zero-config**: Works out of the box with graceful fallbacks
@@ -68,7 +68,7 @@ Savings: 26% cost reduction → $67/month saved at 10K requests
 
 ---
 
-## 🚀 Installation
+##  Installation
 
 ### Quick Start (Recommended)
 ```bash
@@ -108,7 +108,7 @@ pip install transformers  # For Hugging Face models (LLaMA, Claude, etc.)
 
 ---
 
-## 💻 Usage
+##  Usage
 
 ### Interactive Mode
 Perfect for quick analysis and experimentation:
@@ -118,7 +118,7 @@ python token_visualizer.py
 ```
 
 ```
-🔍 Token Visualizer
+ Token Visualizer
 Enter your text (press Ctrl+D when done):
 --------------------------------------------------
 Write a comprehensive blog post about the benefits 
@@ -170,7 +170,7 @@ visualizer.suggest_compression(text)
 
 ---
 
-## 📊 Examples
+##  Examples
 
 ### Example 1: Basic Analysis
 
@@ -182,22 +182,22 @@ for improving our product based on the sentiment and specific issues mentioned.
 
 **Output:**
 ```
-🔍 TOKEN ANALYSIS - GPT-4
+ TOKEN ANALYSIS - GPT-4
 ============================================================
-📊 SUMMARY:
+ SUMMARY:
   Total tokens: 23
   Total characters: 134
   Efficiency: 5.83 chars/token
   Est. GPT-4 cost: $0.0007
 
-📝 LINE BREAKDOWN:
+ LINE BREAKDOWN:
   Line  1:  23 tokens (5.8 c/t) Analyze the following customer feedback and provide actionable...
 
-🎯 COMPRESSION SUGGESTIONS
+ COMPRESSION SUGGESTIONS
 ============================================================
-✅ Text appears well-optimized!
+ Text appears well-optimized!
 
-💰 POTENTIAL SAVINGS:
+ POTENTIAL SAVINGS:
   Estimated reduction: 2 tokens (10%)
   Cost savings: $0.0001 per request
 ```
@@ -215,33 +215,32 @@ the past several months.
 
 **Output:**
 ```
-🔍 TOKEN ANALYSIS - GPT-4
+ TOKEN ANALYSIS - GPT-4
 ============================================================
-📊 SUMMARY:
+ SUMMARY:
   Total tokens: 62
   Total characters: 312
   Efficiency: 5.03 chars/token
   Est. GPT-4 cost: $0.0019
 
-📝 LINE BREAKDOWN:
+ LINE BREAKDOWN:
   Line  1:  62 tokens (5.0 c/t) In order to provide you with the most comprehensive and...
-
-🚨 EXPENSIVE LINES (>50 tokens):
+ EXPENSIVE LINES (>50 tokens):
   Line 1: 62 tokens - In order to provide you with the most comprehensive...
 
-🎯 COMPRESSION SUGGESTIONS
+ COMPRESSION SUGGESTIONS
 ============================================================
-📝 Repetitive words: the, of, to, that, in
+ Repetitive words: the, of, to, that, in
    Consider using pronouns or abbreviations
 
-✂️  Verbose phrases found:
+  Verbose phrases found:
    'in order to' → 'to'
    'for the purpose of' → 'to'
 
-⚡ Low efficiency (5.0 c/t):
+ Low efficiency (5.0 c/t):
    Consider removing filler words, combining sentences
 
-💰 POTENTIAL SAVINGS:
+ POTENTIAL SAVINGS:
   Estimated reduction: 18 tokens (30%)
   Cost savings: $0.0005 per request
 ```
@@ -268,7 +267,7 @@ visualizer.visualize_tokens(code_doc, show_individual=True)
 
 ---
 
-## 🔧 API Reference
+##  API Reference
 
 ### TokenVisualizer Class
 
@@ -314,7 +313,7 @@ class TokenStats:
 
 ---
 
-## 🎨 Customization
+##  Customization
 
 ### Color Themes
 Modify the `Colors` class to customize the visual output:
@@ -350,7 +349,7 @@ verbose_patterns = [
 
 ---
 
-## 📈 Performance & Benchmarks
+##  Performance & Benchmarks
 
 ### Speed Tests
 | Text Size | Analysis Time | Memory Usage |
@@ -367,7 +366,7 @@ Tested against OpenAI's official tokenizer:
 
 ---
 
-## 🛡️ Error Handling
+##  Error Handling
 
 The tool is designed to be robust and handle various edge cases:
 
@@ -395,7 +394,7 @@ visualizer = TokenVisualizer("unknown-model")  # Uses gpt-4 tokenizer
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome contributions! Here's how to get started:
 
@@ -426,16 +425,16 @@ python -m pytest tests/
 7. **Open** a Pull Request
 
 ### Areas for Contribution
-- 🔧 New tokenizer support
-- 🎨 Additional visualization modes
-- 📊 More compression algorithms
-- 🌐 Web interface
-- 📱 Mobile app
-- 🔌 IDE plugins
+-  New tokenizer support
+-  Additional visualization modes
+-  More compression algorithms
+-  Web interface
+-  Mobile app
+-  IDE plugins
 
 ---
 
-## 📋 Roadmap
+##  Roadmap
 
 ### Version 2.0 (Upcoming)
 - [ ] **Web interface** with drag-and-drop file upload
@@ -459,7 +458,7 @@ python -m pytest tests/
 
 ---
 
-## ❓ FAQ
+##  FAQ
 
 ### Q: How accurate is the token counting?
 **A:** 100% accurate when using the official tokenizers (`tiktoken` for OpenAI models, `transformers` for others). The word-based fallback is ~95% accurate.
@@ -481,7 +480,7 @@ python -m pytest tests/
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -511,7 +510,7 @@ SOFTWARE.
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **OpenAI** for the `tiktoken` library
 - **Hugging Face** for the `transformers` library  
@@ -520,25 +519,21 @@ SOFTWARE.
 
 ---
 
-## 📞 Support
+##  Support
 
-### Getting Help
-- 📖 **Documentation**: Check this README first
-- 🐛 **Bug Reports**: [Open an issue](https://github.com/yourusername/token-visualizer/issues)
-- 💡 **Feature Requests**: [Start a discussion](https://github.com/yourusername/token-visualizer/discussions)
-- 💬 **Community**: Join our [Discord server](https://discord.gg/token-visualizer)
+
 
 ### Commercial Support
 For enterprise features, custom integrations, or priority support:
-- 📧 **Email**: support@tokenvisualizer.dev
-- 🌐 **Website**: [tokenvisualizer.dev](https://tokenvisualizer.dev)
+-  **Email**: mattbusel@gmail.com
+- 
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by developers, for developers**
+**Made with  by developers, for developers**
 
-[⭐ Star this repo](https://github.com/yourusername/token-visualizer) • [🐦 Follow on Twitter](https://twitter.com/tokenvisualizer) • [📧 Subscribe to updates](https://tokenvisualizer.dev/newsletter)
+
 
 </div>
