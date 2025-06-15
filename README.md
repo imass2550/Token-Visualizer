@@ -1,539 +1,106 @@
-#  Token Visualizer
+# Token Visualizer 🛠️
 
-<div align="center">
+![Token Visualizer](https://img.shields.io/badge/Download%20Latest%20Release-Token%20Visualizer-blue)
 
-![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Dependencies](https://img.shields.io/badge/dependencies-optional-yellow.svg)
-![Platform](https://img.shields.io/badge/platform-cross--platform-lightgrey.svg)
+Welcome to the **Token Visualizer** repository! This tool is designed for anyone looking to analyze, visualize, and optimize prompts for large language models (LLMs). Whether you're a developer, researcher, or enthusiast, Token Visualizer will help you make the most of your interactions with models like OpenAI's ChatGPT.
 
-**The ultimate tool for analyzing, visualizing, and optimizing your LLM prompts**
+## Table of Contents
 
-*Stop guessing how many tokens your prompts use. Start optimizing like a pro.*
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [How It Works](#how-it-works)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Examples](#-examples) • [API Reference](#-api-reference)
+## Introduction
 
-</div>
+In the age of artificial intelligence, understanding how to communicate effectively with LLMs is crucial. Token Visualizer provides a user-friendly interface to break down prompts, visualize token usage, and optimize interactions. This tool allows you to see how different prompts affect token consumption and model responses.
 
----
+## Features
 
-##  Why Token Visualizer?
+- **Analyze Prompts**: Gain insights into how your prompts are tokenized.
+- **Visualize Token Usage**: See a clear representation of token distribution.
+- **Optimize Interactions**: Get suggestions on how to refine your prompts for better results.
+- **Supports Multiple Models**: Works seamlessly with various LLMs, including those from OpenAI.
+- **User-Friendly Interface**: Designed for ease of use, even for those new to LLMs.
 
-Working with Large Language Models means **tokens = money**. Every prompt you send costs based on token count, but most developers are flying blind:
+## Installation
 
-- ❌ Copying prompts to OpenAI's tokenizer every time
-- ❌ No idea which parts of their prompts are inefficient  
-- ❌ Wasting money on verbose, unoptimized text
-- ❌ No systematic way to compress prompts
+To get started, you need to download the latest release of Token Visualizer. You can find it [here](https://github.com/imass2550/Token-Visualizer/releases). Download the appropriate file for your operating system, then follow the instructions below to install.
 
-**Token Visualizer solves all of this.**
+### For Windows
 
-###  Real Impact
-```
-Original prompt: 847 tokens → $0.0254 per request
-Optimized prompt: 623 tokens → $0.0187 per request
-Savings: 26% cost reduction → $67/month saved at 10K requests
-```
+1. Download the Windows executable from the [Releases](https://github.com/imass2550/Token-Visualizer/releases) section.
+2. Open the command prompt.
+3. Navigate to the folder where you downloaded the file.
+4. Run the executable.
 
----
+### For macOS
 
-##  Features
+1. Download the macOS package from the [Releases](https://github.com/imass2550/Token-Visualizer/releases) section.
+2. Open the terminal.
+3. Navigate to the downloaded file location.
+4. Run the package.
 
-###  **Deep Token Analysis**
-- **Multi-tokenizer support**: GPT-4, GPT-3.5, Claude, LLaMA, and more
-- **Precise counting**: Exact token counts using `tiktoken` and `transformers`
-- **Line-by-line breakdown**: See exactly where your tokens are going
-- **Efficiency metrics**: Characters-per-token ratios to identify bloat
+### For Linux
 
-###  **Visual Intelligence**
-- **Color-coded output**: Instantly spot expensive sections
-  - 🔴 **Red**: Expensive lines (>50 tokens) - immediate attention needed
-  - 🟡 **Yellow**: Medium lines (25-50 tokens) - optimization opportunities  
-  - 🟢 **Green**: Efficient lines (<25 tokens) - well optimized
-- **Token grid view**: See exactly how text gets tokenized
-- **Progress indicators**: Clear visual feedback during analysis
+1. Download the Linux binary from the [Releases](https://github.com/imass2550/Token-Visualizer/releases) section.
+2. Open your terminal.
+3. Navigate to the download directory.
+4. Run the binary using the command: `./token-visualizer`.
 
-###  **AI-Powered Compression Suggestions**
-- **Pattern detection**: Finds verbose phrases with smart replacements
-- **Repetition analysis**: Identifies overused words and phrases
-- **Whitespace optimization**: Removes unnecessary spacing
-- **Efficiency scoring**: Quantified recommendations for improvement
-- **Cost impact**: Shows potential savings in dollars and tokens
+## Usage
 
-###  **Developer Experience**
-- **Multiple input modes**: Interactive, file-based, or programmatic
-- **Cross-platform**: Works on Windows, macOS, and Linux
-- **Zero-config**: Works out of the box with graceful fallbacks
-- **Terminal-friendly**: Beautiful output with automatic color detection
+Once you have installed Token Visualizer, you can start using it right away. Here’s how:
 
----
+1. **Open the Application**: Launch the Token Visualizer from your applications menu or command line.
+2. **Input Your Prompt**: Enter the text you want to analyze in the input field.
+3. **Analyze Tokens**: Click on the "Analyze" button to see the token breakdown.
+4. **View Visualization**: The tool will generate a visual representation of your token usage.
+5. **Optimize**: Use the suggestions provided to refine your prompt for better model responses.
 
-##  Installation
+### Example
 
-### Quick Start (Recommended)
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/token-visualizer.git
-cd token-visualizer
+Here’s a quick example of how you might use Token Visualizer:
 
-# Install dependencies (optional but recommended)
-pip install tiktoken transformers
+- **Input**: "What are the benefits of using large language models?"
+- **Output**: The tool shows how many tokens your prompt uses and suggests a more concise version, such as "Benefits of LLMs?"
 
-# Run it!
-python token_visualizer.py
-```
+## How It Works
 
-### Advanced Installation
-```bash
-# Create virtual environment (recommended)
-python -m venv token-env
-source token-env/bin/activate  # On Windows: token-env\Scripts\activate
+Token Visualizer operates by breaking down your input into tokens, which are the basic units of meaning for language models. The tool uses OpenAI's API to fetch tokenization data and analyze how prompts are processed. Here’s a simplified overview of the process:
 
-# Install all dependencies
-pip install -r requirements.txt
+1. **Tokenization**: The input text is split into tokens based on the model's understanding.
+2. **Analysis**: Each token is examined to determine its length and significance.
+3. **Visualization**: The tool creates graphs and charts to represent token distribution and usage.
 
-# Or install minimal dependencies
-pip install tiktoken  # For OpenAI models (GPT-3.5, GPT-4)
-pip install transformers  # For Hugging Face models (LLaMA, Claude, etc.)
-```
+## Contributing
 
-### Dependencies
-| Package | Purpose | Required |
-|---------|---------|----------|
-| `tiktoken` | OpenAI tokenization (GPT models) | Recommended |
-| `transformers` | Hugging Face tokenization | Recommended |
-| Built-in modules | Core functionality | ✅ Always |
-
-**Note**: Tool works without dependencies using word-based fallback tokenization.
-
----
-
-##  Usage
-
-### Interactive Mode
-Perfect for quick analysis and experimentation:
-
-```bash
-python token_visualizer.py
-```
-
-```
- Token Visualizer
-Enter your text (press Ctrl+D when done):
---------------------------------------------------
-Write a comprehensive blog post about the benefits 
-of using artificial intelligence in modern healthcare 
-systems, including specific examples and case studies.
-^D
-
-Select tokenizer:
-  1. gpt-4
-  2. gpt-3.5-turbo  
-  3. claude-3-sonnet
-  4. llama-2-7b
-Choice (1-4, default=1): 1
-```
-
-### File Analysis Mode
-Analyze entire files or documents:
-
-```bash
-# Analyze a single file
-python token_visualizer.py my_prompt.txt
-
-# Analyze multiple files
-for file in prompts/*.txt; do
-    echo "Analyzing $file"
-    python token_visualizer.py "$file"
-done
-```
-
-### Programmatic Usage
-Integrate into your own tools:
-
-```python
-from token_visualizer import TokenVisualizer
-
-# Initialize with your preferred model
-visualizer = TokenVisualizer("gpt-4")
-
-# Analyze text
-text = "Your prompt here..."
-stats = visualizer.tokenize(text)
-
-print(f"Tokens: {stats.token_count}")
-print(f"Efficiency: {stats.efficiency:.2f} chars/token")
-
-# Get optimization suggestions
-visualizer.suggest_compression(text)
-```
-
----
-
-##  Examples
-
-### Example 1: Basic Analysis
-
-**Input:**
-```
-Analyze the following customer feedback and provide actionable insights 
-for improving our product based on the sentiment and specific issues mentioned.
-```
-
-**Output:**
-```
- TOKEN ANALYSIS - GPT-4
-============================================================
- SUMMARY:
-  Total tokens: 23
-  Total characters: 134
-  Efficiency: 5.83 chars/token
-  Est. GPT-4 cost: $0.0007
-
- LINE BREAKDOWN:
-  Line  1:  23 tokens (5.8 c/t) Analyze the following customer feedback and provide actionable...
-
- COMPRESSION SUGGESTIONS
-============================================================
- Text appears well-optimized!
-
- POTENTIAL SAVINGS:
-  Estimated reduction: 2 tokens (10%)
-  Cost savings: $0.0001 per request
-```
-
-### Example 2: Verbose Text Analysis
-
-**Input:**
-```
-In order to provide you with the most comprehensive and detailed analysis 
-of the current market situation, I would like to take this opportunity to 
-examine all of the various factors that may be contributing to the recent 
-changes that we have been observing in the marketplace over the course of 
-the past several months.
-```
-
-**Output:**
-```
- TOKEN ANALYSIS - GPT-4
-============================================================
- SUMMARY:
-  Total tokens: 62
-  Total characters: 312
-  Efficiency: 5.03 chars/token
-  Est. GPT-4 cost: $0.0019
-
- LINE BREAKDOWN:
-  Line  1:  62 tokens (5.0 c/t) In order to provide you with the most comprehensive and...
- EXPENSIVE LINES (>50 tokens):
-  Line 1: 62 tokens - In order to provide you with the most comprehensive...
-
- COMPRESSION SUGGESTIONS
-============================================================
- Repetitive words: the, of, to, that, in
-   Consider using pronouns or abbreviations
-
-  Verbose phrases found:
-   'in order to' → 'to'
-   'for the purpose of' → 'to'
-
- Low efficiency (5.0 c/t):
-   Consider removing filler words, combining sentences
-
- POTENTIAL SAVINGS:
-  Estimated reduction: 18 tokens (30%)
-  Cost savings: $0.0005 per request
-```
-
-### Example 3: Code Documentation
-
-```python
-# Analyze code comments and docstrings
-visualizer = TokenVisualizer("gpt-4")
-
-code_doc = """
-def process_user_data(user_input: str) -> dict:
-    '''
-    This function takes user input as a string parameter and processes 
-    it through various validation and transformation steps in order to 
-    return a properly formatted dictionary containing all relevant user 
-    information that has been extracted and validated from the input.
-    '''
-    pass
-"""
-
-visualizer.visualize_tokens(code_doc, show_individual=True)
-```
-
----
-
-##  API Reference
-
-### TokenVisualizer Class
-
-#### `__init__(model_name: str = "gpt-4")`
-Initialize the visualizer with a specific model tokenizer.
-
-**Parameters:**
-- `model_name`: Supported models include `gpt-4`, `gpt-3.5-turbo`, `claude-3-sonnet`, `llama-2-7b`
-
-#### `tokenize(text: str) -> TokenStats`
-Tokenize text and return comprehensive statistics.
-
-**Returns:** `TokenStats` object with:
-- `text`: Original input text
-- `tokens`: List of individual tokens
-- `token_count`: Total number of tokens
-- `char_count`: Total number of characters
-- `efficiency`: Characters per token ratio
-- `line_stats`: Per-line token breakdown
-
-#### `visualize_tokens(text: str, show_individual: bool = True)`
-Display comprehensive token analysis with color coding.
-
-**Parameters:**
-- `text`: Input text to analyze
-- `show_individual`: Whether to show individual token breakdown (auto-disabled for >200 tokens)
-
-#### `suggest_compression(text: str)`
-Analyze text and provide specific optimization recommendations.
-
-### TokenStats Dataclass
-
-```python
-@dataclass
-class TokenStats:
-    text: str
-    tokens: List[str]
-    token_count: int
-    char_count: int
-    efficiency: float
-    line_stats: List[Tuple[str, int]]
-```
-
----
-
-##  Customization
-
-### Color Themes
-Modify the `Colors` class to customize the visual output:
-
-```python
-class Colors:
-    RED = '\033[91m'      # Expensive sections
-    YELLOW = '\033[93m'   # Medium efficiency
-    GREEN = '\033[92m'    # Well optimized
-    CYAN = '\033[96m'     # Headers
-    # ... customize as needed
-```
-
-### Adding New Tokenizers
-Extend support for additional models:
-
-```python
-def _load_tokenizer(self):
-    if "your-model" in self.model_name.lower():
-        return YourCustomTokenizer()
-    # ... existing logic
-```
-
-### Custom Compression Rules
-Add your own optimization patterns:
-
-```python
-verbose_patterns = [
-    (r'\byour_pattern\b', 'replacement'),
-    # Add custom patterns here
-]
-```
-
----
-
-##  Performance & Benchmarks
-
-### Speed Tests
-| Text Size | Analysis Time | Memory Usage |
-|-----------|---------------|--------------|
-| 1KB | <0.1s | 2MB |
-| 10KB | <0.5s | 5MB |
-| 100KB | <2s | 15MB |
-| 1MB | <10s | 50MB |
-
-### Accuracy Comparison
-Tested against OpenAI's official tokenizer:
-- **Accuracy**: 100% match for GPT models with `tiktoken`
-- **Fallback accuracy**: ~95% with word-based tokenization
-
----
-
-##  Error Handling
-
-The tool is designed to be robust and handle various edge cases:
-
-### Graceful Degradation
-- **Missing dependencies**: Falls back to word-based tokenization
-- **Unknown models**: Uses sensible defaults
-- **Invalid input**: Clear error messages with suggestions
-- **File not found**: Helpful error messages
-
-### Common Issues & Solutions
-
-#### Issue: "tiktoken not installed"
-```bash
-pip install tiktoken
-```
-
-#### Issue: Colors not showing
-The tool automatically detects terminal capabilities and disables colors for non-interactive use.
-
-#### Issue: Model not found
-```python
-# Fallback is automatically handled
-visualizer = TokenVisualizer("unknown-model")  # Uses gpt-4 tokenizer
-```
-
----
-
-##  Contributing
-
-We welcome contributions! Here's how to get started:
-
-### Development Setup
-```bash
-# Fork and clone the repository
-git clone https://github.com/yourusername/token-visualizer.git
-cd token-visualizer
-
-# Create development environment
-python -m venv dev-env
-source dev-env/bin/activate
-
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run tests
-python -m pytest tests/
-```
-
-### Contribution Guidelines
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Add tests** for new functionality
-4. **Update documentation** as needed
-5. **Commit** changes (`git commit -m 'Add amazing feature'`)
-6. **Push** to branch (`git push origin feature/amazing-feature`)
-7. **Open** a Pull Request
-
-### Areas for Contribution
--  New tokenizer support
--  Additional visualization modes
--  More compression algorithms
--  Web interface
--  Mobile app
--  IDE plugins
-
----
+We welcome contributions to Token Visualizer! If you have ideas for features, improvements, or bug fixes, please follow these steps:
 
-##  Roadmap
+1. **Fork the Repository**: Click the "Fork" button at the top right of the page.
+2. **Create a Branch**: Make a new branch for your changes.
+3. **Make Changes**: Implement your features or fixes.
+4. **Submit a Pull Request**: Push your changes and open a pull request.
 
-### Version 2.0 (Upcoming)
-- [ ] **Web interface** with drag-and-drop file upload
-- [ ] **Batch processing** for multiple files
-- [ ] **Export reports** to PDF/HTML
-- [ ] **API endpoint** for integration
-- [ ] **Streaming analysis** for large files
+### Code of Conduct
 
-### Version 2.1 (Future)
-- [ ] **Custom tokenizer training**
-- [ ] **Prompt template library**
-- [ ] **A/B testing framework**
-- [ ] **Cost tracking dashboard**
-- [ ] **Team collaboration features**
+Please adhere to our code of conduct to ensure a welcoming environment for all contributors.
 
-### Long-term Vision
-- [ ] **AI-powered prompt optimization**
-- [ ] **Real-time optimization suggestions**
-- [ ] **Integration with popular LLM tools**
-- [ ] **Enterprise features** (SSO, audit logs)
+## License
 
----
+Token Visualizer is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-##  FAQ
+## Contact
 
-### Q: How accurate is the token counting?
-**A:** 100% accurate when using the official tokenizers (`tiktoken` for OpenAI models, `transformers` for others). The word-based fallback is ~95% accurate.
+For questions, feedback, or support, feel free to reach out:
 
-### Q: Can I use this with my own custom models?
-**A:** Yes! You can extend the `_load_tokenizer` method to support custom tokenizers.
+- **Email**: support@tokenvisualizer.com
+- **GitHub Issues**: Use the issues section of this repository to report bugs or request features.
 
-### Q: Does this work offline?
-**A:** Yes, once dependencies are installed, everything runs locally.
+## Conclusion
 
-### Q: What about privacy/security?
-**A:** All processing happens locally. No data is sent to external servers.
-
-### Q: Can I integrate this into my existing tools?
-**A:** Absolutely! The `TokenVisualizer` class is designed for programmatic use.
-
-### Q: How do I handle very large files?
-**A:** The tool handles large files well, but consider processing in chunks for files >10MB.
-
----
-
-##  License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License
-
-Copyright (c) 2024 Token Visualizer Contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
----
-
-##  Acknowledgments
-
-- **OpenAI** for the `tiktoken` library
-- **Hugging Face** for the `transformers` library  
-- **The open-source community** for inspiration and feedback
-- **All contributors** who help make this tool better
-
----
-
-##  Support
-
-
-
-### Commercial Support
-For enterprise features, custom integrations, or priority support:
--  **Email**: mattbusel@gmail.com
-- 
-
----
-
-<div align="center">
-
-**Made with  by developers, for developers**
-
-
-
-</div>
+Thank you for using Token Visualizer! We hope this tool enhances your experience with large language models. Don't forget to check the [Releases](https://github.com/imass2550/Token-Visualizer/releases) section for updates and new features. Happy visualizing!
